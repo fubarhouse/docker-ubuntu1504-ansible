@@ -7,7 +7,7 @@ RUN apt-get update \
        python-software-properties \
        software-properties-common \
        python-setuptools python-pip \
-       rsync rsyslog systemd systemd-cron sudo \
+       gcc rsync rsyslog systemd systemd-cron sudo \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean
