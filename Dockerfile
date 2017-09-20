@@ -27,6 +27,9 @@ RUN chmod +x initctl_faker && rm -fr /sbin/initctl && ln -s /initctl_faker /sbin
 # Install Ansible inventory file
 RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
+# Make directory /etc/ansible
+RUN mkdir /etc/ansible
+
 # Report some information
 RUN python --version
 RUN ansible --version
