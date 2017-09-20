@@ -6,7 +6,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        python-software-properties \
        software-properties-common \
-       python-pip \
+       python-setuptools python-pip \
        rsync rsyslog systemd systemd-cron sudo \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
