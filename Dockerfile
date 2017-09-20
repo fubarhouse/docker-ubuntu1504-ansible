@@ -24,11 +24,11 @@ RUN rm -rf /var/lib/apt/lists/* \
 COPY initctl_faker .
 RUN chmod +x initctl_faker && rm -fr /sbin/initctl && ln -s /initctl_faker /sbin/initctl
 
-# Install Ansible inventory file
-RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
-
 # Make directory /etc/ansible
 RUN mkdir /etc/ansible
+
+# Install Ansible inventory file
+RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 # Report some information
 RUN python --version
