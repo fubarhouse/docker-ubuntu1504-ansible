@@ -4,10 +4,11 @@ MAINTAINER Karl Hepworth
 # Install dependencies.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-       python-software-properties \
+       python-dev python-software-properties \
        build-essential software-properties-common \
        python-setuptools python-pip \
        gcc rsync rsyslog systemd systemd-cron sudo \
+       libffi-dev libssl-dev \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean
