@@ -1,6 +1,8 @@
 FROM ubuntu:15.04
 MAINTAINER Karl Hepworth
 
+RUN sed -i.bak -r 's/(archive|security).ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
+
 # Install dependencies.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
