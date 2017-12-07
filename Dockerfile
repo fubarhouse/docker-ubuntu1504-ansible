@@ -18,7 +18,7 @@ RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 #ADD etc/rsyslog.d/50-default.conf /etc/rsyslog.d/50-default.conf
 
 # Install Ansible
-RUN pip install urllib3 pyOpenSSL ndg-httpsclient pyasn1 cryptography
+RUN pip install urllib3 pyOpenSSL ndg-httpsclient pyasn1
 RUN pip install ansible
 RUN rm -rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
